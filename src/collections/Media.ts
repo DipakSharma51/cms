@@ -1,13 +1,16 @@
 import type { CollectionConfig } from 'payload'
 
 import {
+  BlocksFeature,
   FixedToolbarFeature,
+  HeadingFeature,
   InlineToolbarFeature,
   lexicalEditor,
 } from '@payloadcms/richtext-lexical'
 
 import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
+import { MediaBlock } from '@/blocks/MediaBlock/config'
 
 export const Media: CollectionConfig = {
   slug: 'media',
@@ -28,7 +31,13 @@ export const Media: CollectionConfig = {
       type: 'richText',
       editor: lexicalEditor({
         features: ({ rootFeatures }) => {
-          return [...rootFeatures, FixedToolbarFeature(), InlineToolbarFeature()]
+          return [
+            ...rootFeatures,
+            HeadingFeature({ enabledHeadingSizes: ['h1', 'h2', 'h3', 'h4'] }),
+            BlocksFeature({ blocks: [MediaBlock] }),
+            FixedToolbarFeature(),
+            InlineToolbarFeature(),
+          ]
         },
       }),
     },

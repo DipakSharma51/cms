@@ -83,6 +83,6 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Payload Website Template Search`,
+    title: `Ladies Kurtis Exporter | Premium Indian Ethnic Wear – NRD Search`,
   }
 }

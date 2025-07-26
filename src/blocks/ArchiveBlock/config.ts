@@ -47,6 +47,10 @@ export const Archive: Block = {
           label: 'Individual Selection',
           value: 'selection',
         },
+        {
+          label: 'Media',
+          value: 'media',
+        },
       ],
     },
     {
@@ -73,6 +77,16 @@ export const Archive: Block = {
       hasMany: true,
       label: 'Categories To Show',
       relationTo: 'categories',
+    },
+    {
+      name: 'media',
+      type: 'relationship',
+      admin: {
+        condition: (_, siblingData) => siblingData.populateBy === 'media',
+      },
+      hasMany: true,
+      label: 'Media To Show',
+      relationTo: 'media',
     },
     {
       name: 'limit',

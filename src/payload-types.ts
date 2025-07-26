@@ -528,9 +528,10 @@ export interface ArchiveBlock {
     };
     [k: string]: unknown;
   } | null;
-  populateBy?: ('collection' | 'selection') | null;
+  populateBy?: ('collection' | 'selection' | 'media') | null;
   relationTo?: 'products' | null;
   categories?: (number | Category)[] | null;
+  media?: (number | Media)[] | null;
   limit?: number | null;
   selectedDocs?:
     | {
@@ -1193,6 +1194,7 @@ export interface ArchiveBlockSelect<T extends boolean = true> {
   populateBy?: T;
   relationTo?: T;
   categories?: T;
+  media?: T;
   limit?: T;
   selectedDocs?: T;
   id?: T;

@@ -7,7 +7,6 @@ export type MapBlockProps = {
 
 export const MapField: React.FC<MapBlockProps> = (props) => {
   const { className } = props
-  console.log('🚀 ~ props:', props)
 
   return (
     <div className={cn('', className)}>
